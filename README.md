@@ -43,7 +43,7 @@ Reboot as needed with `sudo reboot`
 
    ```
 
-1. Clone the temp sensor repo `git clone https://github.com/karhohs/raspberry_pi_temp_sensor`
+1. Clone the temperature sensor repo `git clone https://github.com/karhohs/raspberry_pi_temperature_sensor`
 
 1. Within the github repo, build the base Docker image and test it. The data_logging_test can be run without having to connect the temperature sensor the Raspberry Pi Zero W.
    ```bash
