@@ -43,6 +43,17 @@ Reboot as needed with `sudo reboot`
 
    ```
 
+1. Clone the temp sensor repo `git clone https://github.com/karhohs/raspberry_pi_temp_sensor`
+
+1. Within the github repo, build the base Docker image and test it.
+   ```bash
+   cd ./raspberry_pi_temp_sensor/gpio_base
+   docker build -t gpio_base .
+   cd ../data_logging_test
+   docker build -t data_logging_test .
+   ```
+
+1.
    1. Note that I like to typically work with Anaconda to manage programming environments, but the armv6l processor within the Raspberry Pi Zero W is not well supported. The deal breaker was not being able to run python 3 or jupyter notebook. I think working outside of typical
 
 1. `wget https://repo.continuum.io/miniconda/Miniconda-3.5.5-Linux-armv6l.sh`
