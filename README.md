@@ -55,7 +55,7 @@ Reboot as needed with `sudo reboot`
    docker run -d -v /home/pi/data:/root/data -i data_logging_test:latest
 
    ```
-   1. To interact with a container try `   docker run -it gpio_base:latest bash`
+   1. To interact with a container try `docker run -it gpio_base:latest bash`
 
 1.
    1. Note that I like to typically work with Anaconda to manage programming environments, but the armv6l processor within the Raspberry Pi Zero W is not well supported. The deal breaker was not being able to run python 3 or jupyter notebook. I think working outside of typical
