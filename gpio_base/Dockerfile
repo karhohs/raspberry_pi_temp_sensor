@@ -6,16 +6,9 @@ RUN apt-get -q update && \
     apt-get -qy install \
         python python-pip \
         python-dev python-pip gcc make \
-        build-essential git cmake \
+        build-essential git \
         sqlite3 libsqlite3-dev \
-        libblas-dev liblapack-dev \
-        libatlas-base-dev gfortran \
-        unzip cython
+        unzip
 
 RUN pip install rpi.gpio \
-        numpy \
-        pandas \
-        scipy \
         sqlalchemy
-
-RUN echo "COMPLETE!"
