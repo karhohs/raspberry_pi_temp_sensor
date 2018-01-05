@@ -39,7 +39,8 @@ Reboot as needed with `sudo reboot`
 1. Install some packages.
 
    ```bash
-   sudo apt-get install -y git
+   sudo apt-get install -y git \
+   tmux
 
    ```
 
