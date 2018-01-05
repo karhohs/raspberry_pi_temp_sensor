@@ -9,7 +9,8 @@ RUN apt-get -q update && \
         build-essential git cmake \
         sqlite3 libsqlite3-dev \
         libblas-dev liblapack-dev \
-        libatlas-base-dev gfortran
+        libatlas-base-dev gfortran \
+        unzip cython
 
 RUN pip install rpi.gpio \
         numpy \

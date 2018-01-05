@@ -56,6 +56,7 @@ Reboot as needed with `sudo reboot`
 
    ```
    1. To interact with a container try `docker run -it gpio_base:latest bash`
+   1. To do some trouble shooting leave off the `-d` flag after `docker run`, which would otherwise start the container and then return access to the command line (but also hide the output of the container).
 
 1.
    1. Note that I like to typically work with Anaconda to manage programming environments, but the armv6l processor within the Raspberry Pi Zero W is not well supported. The deal breaker was not being able to run python 3 or jupyter notebook. I think working outside of typical
