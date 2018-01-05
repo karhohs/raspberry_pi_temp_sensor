@@ -24,7 +24,7 @@ Reboot as needed with `sudo reboot`
    sudo apt-get upgrade -y
    ```
 
- 1. Reduce gpu memory dedicated to system, because it is run in headless mode.
+ 1. Reduce gpu memory dedicated to the os, because it is run in headless mode and does need to support a desktop gui.
     1. `sudo nano /boot/config.txt`
        1. add the line `gpu_mem=16`
 
@@ -41,7 +41,6 @@ Reboot as needed with `sudo reboot`
    ```bash
    sudo apt-get install -y git \
    tmux
-
    ```
 
 1. Clone the temperature sensor repo `git clone https://github.com/karhohs/raspberry_pi_temperature_sensor`

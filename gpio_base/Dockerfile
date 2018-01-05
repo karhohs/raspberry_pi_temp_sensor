@@ -5,6 +5,11 @@ ENTRYPOINT []
 RUN apt-get -q update && \
     apt-get -qy install \
         python python-pip \
-        python-dev python-pip gcc make
+        python-dev python-pip gcc make \
+        sqlite3 libsqlite3-dev
 
-RUN pip install rpi.gpio
+RUN pip install rpi.gpio \
+        numpy \
+        pandas \
+        scipy \
+        sqlalchemy
