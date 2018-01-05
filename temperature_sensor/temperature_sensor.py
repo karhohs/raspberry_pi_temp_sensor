@@ -1,9 +1,10 @@
 import os
 import time
 from datetime import datetime
+import RPi.GPIO as GPIO
 
 def temperature_sensor():
-    with open("temperature_log") as f:
+    with open("/root/temperature_log.csv") as f:
         for i in range(5):
             now = datetime.now()
             f.write(str(now))
