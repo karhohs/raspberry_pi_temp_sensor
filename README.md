@@ -8,7 +8,7 @@ In late 2017 and early 2018, the Boston area was hit by a historically cold stre
 1. Raspberry Pi Zero W
 1. DHT22 temperature sensor
 1. Lexar 16GB SD card
-1. Anker PowerCore+ mini 3350
+1. Anker PowerCore 10000
 1. Amazon USB to USB micro 3ft
 1. Hammond project box
 1. Small parts such as:
@@ -18,8 +18,28 @@ In late 2017 and early 2018, the Boston area was hit by a historically cold stre
    1. Rubber feet
    1. Labels
 
+Choosing parts can be a trial and error process. I primarily was guided by what was available on Amazon or at my local MicroCenter.
+
+## The battery
+Like most portable electronics the battery is very important. The use of an Anker charger for the Raspberry Pi was something I haven't tried for this type of application, but I have really liked using Anker chargers in the past with smartphones and the Nintendo Switch. The cost of the battery did make me hesitate, but I think Anker uses high quality parts justifies the premium. I emailed their customer support and they said the operating temperature range is -10 C to 45 C, which will cover most weather conditions. The Anker PowerCore has a rated max output of 5 V and 2.4 A and the Raspberry Pi Zero W has a [recommended PSU current capacity](https://www.raspberrypi.org/help/faqs/#powerReqs) of 1.2 A. The temperature sensor will not approach its max level of current draw, so a single charge should deliver a long window of operation.
+
+## The project box
+I like Hammond ABS project boxes, because they come in a lot of sizes and feel well manufactured. It is a brand I trust.
+
+## The memory
+SD cards are so ubiquitous I found the least expensive memory I could find, which in 2018 was an on-sale Lexar 16GB card for $5.
+
+## The sensor
+The DHT22 is popular and has an excellent [python library](https://github.com/adafruit/Adafruit_Python_DHT) maintained by the wonderful Adafruit company. Without their open-source support this Raspberry Pi project would not be possible. Thank you Ladyada!
+
+## The Pi
+The Raspberry Pi Zero W proves big things come in small packages and packs a lot of bang for your buck. I've found these on sale for $5 a pop.
+
+## How much will it cost?
+If buying everything brand new, in 2018 dollars this project will run roughly $50. For some, this project is simple enough that one might already have all the necessary parts lying around. Note that the biggest cost in my parts list is the battery, accounting for half the total. To get started at a lower entry cost consider plugging in from the wall to make some measurements.
+
 # Getting Started
-## Configuring the Raspberry Pi Zero W
+## Configuring Raspbian for Raspberry Pi Zero W
 *Reboot as needed with `sudo reboot`*
 
 1. Follow the [instructions](https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor) for downloading Raspbian onto an SD card and setting up wireless.
@@ -44,10 +64,11 @@ In late 2017 and early 2018, the Boston area was hit by a historically cold stre
    sudo apt-get upgrade -y
    ```
 
- 1. Reduce gpu memory dedicated to the os, because it is run in headless mode and does need to support a desktop gui.
-    1. `sudo nano /boot/config.txt`
-       1. add the line `gpu_mem=16`
+1. Reduce gpu memory dedicated to the os, because it is run in headless mode and does need to support a desktop gui.
+   1. `sudo nano /boot/config.txt`
+      1. add the line `gpu_mem=16`
 
+## Setup Docker
 1. [Install docker](https://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/).
    ```bash
    curl -sSL https://get.docker.com | sh
@@ -78,8 +99,12 @@ In late 2017 and early 2018, the Boston area was hit by a historically cold stre
    ```
    1. To interact with a container try `docker run -it gpio_base:latest bash`
    1. To do some trouble shooting leave off the `-d` flag for the command `docker run`. Otherwise the container is detached from the command line after it is created. `docker ps` will show any running docker containers.
+   1. To help with the consolidation of data from multiple sensors the data is stored in an [sqlite database](http://www.instructables.com/id/Data-Collection-With-Raspberry-Pi/).
 
-1.
+# Hardware
+
+
+# Deploying the Sensor
 
 # Supplemental Information
 
